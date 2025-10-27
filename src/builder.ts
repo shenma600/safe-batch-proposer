@@ -1,0 +1,1 @@
+import { ethers } from 'ethers'; export type SafeTx={to:string; value:string; data:string; operation:number}; export function buildBatch(txs:SafeTx[], meta:{safe:string;nonce:number;chainId:number}){ return { version:'1.0', chainId:meta.chainId, createdAt:Date.now(), safe:meta.safe, meta:{name:'safe-batch-proposer'}, transactions: txs }; }
